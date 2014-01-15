@@ -1,0 +1,1 @@
+Rideology, an App Academy final project. Not so loosely based on zimride. Implemented on Rails, Backbone and Bootsrap. Features forthcoming.
