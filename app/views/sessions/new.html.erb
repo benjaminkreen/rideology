@@ -1,0 +1,16 @@
+<div class="row jumbotron">
+	
+	<h1>Sign In</h1>
+	<div class="col-xs-3">
+		<form action="<%= session_url %>" method="POST">
+			<input type="text" name="user[username]" placeholder="username">
+			<br>
+			<br>
+			<input type="password" name="user[password]" placeholder="password">
+			<br>
+			<br>
+			<input type="submit" class="btn btn-primary" value="Create User">
+		</form>
+		<%= link_to("Don't have an account yet?", new_user_url) %>
+	</div>
+</div>

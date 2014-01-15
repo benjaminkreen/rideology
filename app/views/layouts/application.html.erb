@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if flash[:errors] && !flash[:errors].empty? %>
+	<div class="alert alert-danger">
+		<p><%= flash[:errors].join(', ') %></p>
+	</div>
+<% end %>
+
+<% if !!current_user %>
+	<%= button_to("Logout", session_url, :method => :delete) %>
+<% end %>
 
 <%= yield %>
 
