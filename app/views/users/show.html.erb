@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="page-header">
+	<h1>User Page <small><%= @user.username %></small></h1>
+</div>
+<div class="well">
+	<p>First Name: <%= @user.fname %></p>
+	<br>
+	<p>Last Name: <%= @user.lname %></p>
+</div>
