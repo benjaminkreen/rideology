@@ -1,5 +1,5 @@
-Rideology.Collections.RideOffers = Backbone.Collection.extend({
-	url: ,
+RideologyApp.Collections.RideOffers = Backbone.Collection.extend({
+	url: "",
 	
-	model: Rideology.Models.RideOffer
+	model: RideologyApp.Models.RideOffer
 })

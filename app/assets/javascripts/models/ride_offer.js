@@ -1,3 +1,3 @@
-Rideology.Models.RideOffer = Backbone.Model.extend({
+RideologyApp.Models.RideOffer = Backbone.Model.extend({
 	
 })

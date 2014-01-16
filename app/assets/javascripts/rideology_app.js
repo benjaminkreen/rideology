@@ -4,11 +4,12 @@ window.RideologyApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-	  RideologyApp.rideOffers = new RideologyApp.Collections.RideOffers();
-	  new RideologyApp.Routers.Router({
-		  $rootEl: $('.bbhandle')
-	  });
-	  Backbone.history.start();
+	  alert("For reals");
+	  // RideologyApp.rideOffers = new RideologyApp.Collections.RideOffers();
+ // 	  new RideologyApp.Routers.Router({
+ // 		  $rootEl: $('.bbhandle')
+ // 	  });
+ // 	  Backbone.history.start();
   }
 };
 
