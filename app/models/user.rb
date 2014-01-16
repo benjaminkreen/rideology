@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64(16)
   end
   
+  has_many :ride_takes
+  
   def self.find_by_credentials(username, secret)
     @user = User.find_by_username(username)
     return @user unless @user

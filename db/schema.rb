@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140115175011) do
+ActiveRecord::Schema.define(:version => 20140116002632) do
+
+  create_table "ride_offers", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "date"
+    t.string   "origin"
+    t.string   "destination"
+    t.integer  "spots"
+    t.integer  "cost"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "ride_takes", :force => true do |t|
+    t.integer  "ride_offer_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "ride_takes", ["ride_offer_id"], :name => "index_ride_takes_on_ride_offer_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
