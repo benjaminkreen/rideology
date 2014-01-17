@@ -7,5 +7,4 @@ module SessionsHelper
   def log_in!(user)
     session[:token] = user.token
   end
-  
 end

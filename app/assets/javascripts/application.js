@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require jquery.serializeJSON.min
 //= require jquery.ui.datepicker
 //= require rideology_app
 //= require_tree ../templates

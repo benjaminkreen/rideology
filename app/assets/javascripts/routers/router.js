@@ -10,7 +10,7 @@ RideologyApp.Routers.Router = Backbone.Router.extend({
 	},
 	index: function(){
 		var that = this;
-		var coll = new RideologyApp.Collections.RideOffers();
+		var coll = RideologyApp.rideOffers
 		coll.fetch({
 			success: function(){
 				var view = new RideologyApp.Views.IndexView({

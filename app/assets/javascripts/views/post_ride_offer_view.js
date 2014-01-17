@@ -6,6 +6,15 @@ RideologyApp.Views.PostRideOfferView = Backbone.View.extend({
   },
   
   events:{
+    "click button.submit": "postForm"
     
+  },
+  
+  postForm: function(event){
+    event.preventDefault();
+    var formData = this.$('form').serializeJSON();
+    console.log(formData['ride_offer']);
+    RideologyApp.rideOffers.create(formData['ride_offer']);
+    Backbone.history.navigate("", {trigger: true});
   }
 })
