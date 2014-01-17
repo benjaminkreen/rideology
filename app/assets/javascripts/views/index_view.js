@@ -4,7 +4,7 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
 		this.listenTo(this.collection, "add remove reset", this.render);
 	},
 	render: function(){
-		this.$el.text("check this out!");
+		this.$el.html(JST["rides/index"]({ coll: this.collection }))
 		return this;
 	}
 	

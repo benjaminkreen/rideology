@@ -1,0 +1,34 @@
+<form>
+  <div class="row well col-xs-8 col-xs-offset-1">
+    <div class="col-xs-4">
+      <label for="origin">Start Location:</label>
+      <br>
+      <input type="text" id="origin" name="ride_offer[origin]" placeholder="ex: Smallville, KS">
+      <br>
+      <label for="destination">Destination:</label>
+      <br>
+      <input type="text" id="destination" name="ride_offer[destination]" placeholder="ex: Metropolis, NY">
+      <br>
+      <br>
+      <button class="btn btn-primary">Create Ride</button>
+    </div>
+    <div class="col-xs-4">
+      <label for="date">Date:</label>
+      <br>
+      <input type="text" class="datepicker" name="ride_offer[date]" id="date">
+      <br>
+      <label for="cost">Cost:</label>
+      <br>
+      <input type="text" id="cost" name="ride_offer[cost]">
+      <br>
+      <br>
+      <label for="spots">Seats: </label>
+      <select name="ride_offer[spots]" id="spots">
+        <option selected value="1">1</option>
+        <% for(var i = 2; i < 6; i++){ %>
+          <option value="<%= i %>"><%= i %></option>
+        <% }; %> 
+      </select>
+    </div>
+  </div>
+</form>

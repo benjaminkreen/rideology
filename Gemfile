@@ -33,6 +33,8 @@ gem 'ejs'
 
 gem 'backbone-on-rails'
 
+gem 'jquery-ui-rails'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

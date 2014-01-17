@@ -1,0 +1,16 @@
+<h1> Check out all the rides! </h1>
+<% coll.each(function(ride){ %>
+	<div class="panel panel-default col-xs-8 col-xs-offset-2">
+		<div class="panel-heading">
+			<h3 class="panel-title">Origin: <%= ride.get('origin') %> Destination: <%= ride.get('destination') %></h3>
+    </div>
+    <div class="panel-body">
+        <p>Spots: <%= ride.get('spots') %></p>
+        <br>
+        <p>Cost: <%= ride.get('cost') %></p>
+        <br>
+        <p>Departure: <%= ride.get('date') %></p>
+    </div>
+  </div>
+  <br>
+<% }); %>
