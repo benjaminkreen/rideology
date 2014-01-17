@@ -7,9 +7,8 @@ gem 'rails', '3.2.15'
 
 gem 'pg'
 
-group :development do
-  gem 'faker'
-end
+gem 'faker'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
