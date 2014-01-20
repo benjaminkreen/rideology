@@ -17,7 +17,14 @@ RideologyApp.Views.PostRideOfferView = Backbone.View.extend({
     event.preventDefault();
     var formData = this.$('form').serializeJSON();
     console.log(formData['ride_offer']);
-    RideologyApp.rideOffers.create(formData['ride_offer']);
+    RideologyApp.currentUser.get('ride_offers').create(formData['ride_offer'], {
+      success: function(){
+        alert("Ride posted!");
+      },
+      error: function(){
+        alert("Something went wrong, are you logged in?");
+      }
+    });
     Backbone.history.navigate("", {trigger: true});
   }
 })
