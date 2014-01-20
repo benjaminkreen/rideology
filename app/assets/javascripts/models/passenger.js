@@ -1,0 +1,1 @@
+RideologyApp.Models.Passenger = Backbone.Model.extend({})

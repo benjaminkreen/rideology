@@ -1,7 +1,10 @@
 RideologyApp.Views.PostRideOfferView = Backbone.View.extend({
   render: function(){
     this.$el.html(JST['rides/ride_offer_post_form']);
-    this.$('.datepicker').datepicker({minDate: new Date()});
+    this.$('.datepicker').datepicker({
+      minDate: new Date(),
+      dateFormat: "yy-mm-dd"
+    });
     return this;
   },
   

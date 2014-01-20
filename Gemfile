@@ -26,6 +26,8 @@ gem 'figaro'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
+gem 'jbuilder'
+
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
 gem 'ejs'

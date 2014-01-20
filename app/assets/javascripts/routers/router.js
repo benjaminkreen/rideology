@@ -5,7 +5,7 @@ RideologyApp.Routers.Router = Backbone.Router.extend({
 	
 	routes: {
 		"":"index",
-		"about": "about",
+		"user": "user",
 		"post": "postRideOffer"
 	},
 	index: function(){
@@ -21,9 +21,10 @@ RideologyApp.Routers.Router = Backbone.Router.extend({
 		})
 	},
 	
-	about: function(){
-		console.log("=}=}=}=}=}=}=}=}=}=}")
-		var view = new RideologyApp.Views.AboutView();
+	user: function(){
+		var view = new RideologyApp.Views.UserView({
+		  model: RideologyApp.currentUser
+		});
 		this._swapView(view);
 	},
 	postRideOffer: function(){

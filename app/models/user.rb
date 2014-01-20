@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   end
   
   has_many :ride_takes
+  has_many :ride_offers
   
   def self.find_by_credentials(username, secret)
     @user = User.find_by_username(username)

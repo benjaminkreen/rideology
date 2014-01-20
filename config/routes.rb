@@ -1,5 +1,5 @@
 RideologyApp::Application.routes.draw do
-  resources :users, :only => [:create, :new, :show]
+  resources :users, :only => [:create, :new, :index]
   resource :session, :only => [:create, :new, :destroy]
   root :to => "StaticPages#index"
   namespace :api do

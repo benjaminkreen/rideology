@@ -13,7 +13,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find_by_id(params[:id])
+  def index
+    p "===================="
+    p current_user
+    if !!current_user
+      @user = current_user
+    else
+      @user = User.new({username: "Guest", fname: "Captain", lname: "Cuddles"})
+    end
+    render "index"
   end
 end
