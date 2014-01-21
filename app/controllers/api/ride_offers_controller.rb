@@ -20,8 +20,12 @@ class Api::RideOffersController < ApplicationController
   end
 
   def index
-    @ride_offers = RideOffer.all
-    render json: @ride_offers
+    @ride_offers = RideOffer.page(params[:page]).per(10)
+    render :json => {
+      ride_offers: @ride_offers,
+      page_number: params[:page],
+      total_pages: @ride_offers.total_pages
+    }
   end
 
   def show

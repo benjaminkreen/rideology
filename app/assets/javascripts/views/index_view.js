@@ -18,7 +18,31 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
           })
         }
     });
+    this.listenForScroll();
 		return this;
-	}
+	},
+  
+  listenForScroll: function(){
+    console.log(this.collection.total_pages);
+    $(window).off("scroll");
+    var throttledCallback = _.throttle(this.nextPage.bind(this), 200);
+    $(window).on("scroll", throttledCallback);
+  },
+  
+  nextPage: function(){
+    var that = this;
+    if ($(window).scrollTop() > $(document).height() - $(window).height() - 50){
+      if(that.collection.page_number < that.collection.total_pages){
+        that.collection.fetch({
+          data: {page: that.collection.page_number + 1},
+          remove: false,
+          wait: true,
+          success: function(){
+            console.log("got page" + that.collection.page_number);
+          }
+        });
+      }
+    }
+  }
 	
-})
+});
