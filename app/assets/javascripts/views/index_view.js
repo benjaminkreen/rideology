@@ -4,7 +4,20 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
 		this.listenTo(this.collection, "add remove reset", this.render);
 	},
 	render: function(){
-		this.$el.html(JST["rides/index"]({ coll: this.collection }))
+		this.$el.html(JST["rides/index"]({ coll: this.collection }));
+    this.$('.droppable').droppable({
+        drop: function(event, ui){
+          var roID = $(event.target).data('id')
+          var take = new RideologyApp.Models.RideTake({ride_offer_id: roID });
+          take.save({},{
+            success: function(){
+              alert("Ride added");
+              console.log(event.target)
+              $(event.target).droppable("option", "disable", true);
+            }
+          })
+        }
+    });
 		return this;
 	}
 	

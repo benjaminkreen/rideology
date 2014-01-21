@@ -1,6 +1,6 @@
 <h1> Check out all the rides! </h1>
 <% coll.each(function(ride){ %>
-	<div class="panel panel-default col-xs-8 col-xs-offset-2">
+	<div class="panel panel-default col-xs-8 col-xs-offset-2 droppable" id="<%= ride.id %>" data-id="<%= ride.id %>">
 		<div class="panel-heading">
 			<h3 class="panel-title">Origin: <%= ride.get('origin') %> Destination: <%= ride.get('destination') %></h3>
     </div>

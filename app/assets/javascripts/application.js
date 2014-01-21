@@ -17,6 +17,8 @@
 //= require bootstrap
 //= require jquery.serializeJSON.min
 //= require jquery.ui.datepicker
+//= require jquery.ui.draggable
+//= require jquery.ui.droppable
 //= require rideology_app
 //= require_tree ../templates
 //= require_tree ./models
