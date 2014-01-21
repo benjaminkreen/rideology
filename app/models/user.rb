@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
   has_many :ride_takes
   has_many :ride_offers
   
+  has_many(
+    :takes,
+    :through => :ride_takes,
+    :source => :ride_offer
+  )
+  
   def self.find_by_credentials(username, secret)
     @user = User.find_by_username(username)
     return @user unless @user

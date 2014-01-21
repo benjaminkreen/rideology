@@ -1,17 +1,32 @@
 <div class="jumbotron">
   <h4>Welcome <%= user.get('fname') %> </h4>
 </div>
-<div class="col-xs-6">
-  <ul class="list-group">
-    <% rides.each( function(ride){ %>
-      <li class="list-group-item">
-        <span class="badge"><%= ride.get('passengers').length %></span>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#ride-<%= ride.id %>-modal">View Passengers</button>
-        <%= ride.get("origin") %>
-      </li>
-    <% }); %>
-  </ul>
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Your Ride Offers</h3>
+    <ul class="list-group">
+      <% rides.each( function(ride){ %>
+        <li class="list-group-item">
+          <span class="badge"><%= ride.get('passengers').length %></span>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#ride-<%= ride.id %>-modal">View Passengers</button>
+          <%= ride.get("origin") %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+  <div class="col-xs-6">
+    <h3>Your Ride Takes</h3>
+    <ul class="list-group">
+      <% takes.each( function(take){ %>
+        <li class="list-group-item">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#take-<%= take.id %>-modal">View Ride Info</button>
+          <%= take.get("origin") %>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
 </div>
+
 <% rides.each(function(ride){ %>
   <div class="modal fade" id="ride-<%= ride.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -30,6 +45,28 @@
              <li class="list-group-item">No passengers yet.</li>
             <% }; %>
           </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<% }); %>
+
+<% takes.each(function(take){ %>
+  <div class="modal fade" id="take-<%= take.id %>-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Ride Info</h4>
+        </div>
+        <div class="modal-body">
+          <p>Origin: <%= take.get('origin') %></p>
+          <p>Destination: <%= take.get('destination') %></p>
+          <p>Cost: <%= take.get('cost') %></p>
+          <p>Drive Name: <%= take.get('fname') %> <%= take.get('lname') %></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

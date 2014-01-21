@@ -27,6 +27,7 @@ RideologyApp.Routers.Router = Backbone.Router.extend({
 		});
 		this._swapView(view);
 	},
+  
 	postRideOffer: function(){
 		var view = new RideologyApp.Views.PostRideOfferView();
 		this._swapView(view);

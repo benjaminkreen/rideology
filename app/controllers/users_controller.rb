@@ -14,8 +14,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    p "===================="
-    p current_user
     if !!current_user
       @user = current_user
     else
@@ -23,4 +21,14 @@ class UsersController < ApplicationController
     end
     render "index"
   end
+  
+  def show
+    if !!current_user
+      @user = current_user
+    else
+      @user = User.new({username: "Guest", fname: "Captain", lname: "Cuddles"})
+    end
+    render "index"
+  end
+  
 end

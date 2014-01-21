@@ -10,3 +10,10 @@ json.ride_offers do
    end
  end
 end
+
+json.takes do
+  json.array!(@user.takes) do |take|
+    json.(take, :origin, :destination, :cost, :id)
+    json.(take.user, :fname, :lname)
+  end
+end

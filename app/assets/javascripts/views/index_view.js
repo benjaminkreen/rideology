@@ -11,8 +11,8 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
           var take = new RideologyApp.Models.RideTake({ride_offer_id: roID });
           take.save({},{
             success: function(){
+              RideologyApp.currentUser.fetch();
               alert("Ride added");
-              console.log(event.target)
               $(event.target).droppable("option", "disable", true);
             }
           })
