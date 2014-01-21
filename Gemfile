@@ -36,6 +36,7 @@ gem 'backbone-on-rails'
 
 gem 'jquery-ui-rails'
 
+gem 'kaminari'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
