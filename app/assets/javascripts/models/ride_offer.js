@@ -7,5 +7,5 @@ RideologyApp.Models.RideOffer = Backbone.Model.extend({
       data.passengers = new RideologyApp.Collections.Passengers([]);
     }
     return data;
-  }	
+  }
 })
