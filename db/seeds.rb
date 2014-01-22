@@ -21,17 +21,15 @@ ActiveRecord::Base.transaction do
       :password => "password"
     })
   end
-  i = 1
-  5.times do
+  40.times do
     RideOffer.create!({
-      :user_id => i,
-      :date => DateTime.new(2014, 2, (10 + i)),
+      :user_id => (2 + rand(9)),
+      :date => DateTime.new(2014, (1 + rand(12)), (1 + rand(20))),
       :origin => "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
       :destination => "#{Faker::Address.city}, #{Faker::Address.state_abbr}",
-      :spots => (6 - i),
-      :cost => i * 7.5
+      :spots => (1 + rand(5)),
+      :cost => rand(40)
     })
-    i += 1
   end
   
   ro1 = RideOffer.new({

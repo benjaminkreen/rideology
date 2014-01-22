@@ -6,6 +6,7 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
 	render: function(){
 		this.$el.html(JST["rides/index"]({ coll: this.collection }));
     this.$('.droppable').droppable({
+        hoverClass: "ui-state-hover",
         drop: function(event, ui){
           var roID = $(event.target).data('id')
           var take = new RideologyApp.Models.RideTake({ride_offer_id: roID });
@@ -19,11 +20,22 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
         }
     });
     this.listenForScroll();
+    $('.pop').popover({
+      container: 'body',
+      placement: 'bottom',
+      trigger: 'manual',
+      title: 'Pro Tip',
+      content: 'Drag this icon into a ride bellow to sign up!',
+    });
+    $('.pop').popover('show');
+    setTimeout(function(){
+      $('.pop').popover('hide');
+      $('#draggable').toggleClass('pop');
+    }, 5000);
 		return this;
 	},
   
   listenForScroll: function(){
-    console.log(this.collection.total_pages);
     $(window).off("scroll");
     var throttledCallback = _.throttle(this.nextPage.bind(this), 200);
     $(window).on("scroll", throttledCallback);
@@ -36,10 +48,7 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
         that.collection.fetch({
           data: {page: that.collection.page_number + 1},
           remove: false,
-          wait: true,
-          success: function(){
-            console.log("got page" + that.collection.page_number);
-          }
+          wait: true
         });
       }
     }
