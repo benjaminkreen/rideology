@@ -20,12 +20,23 @@ class Api::RideOffersController < ApplicationController
   end
 
   def index
-    @ride_offers = RideOffer.page(params[:page]).per(10)
-    render :json => {
-      ride_offers: @ride_offers,
-      page_number: params[:page],
-      total_pages: @ride_offers.total_pages
-    }
+    if params[:search_origin] || params[:search_destination] || params[:search_date]
+      origin = params[:search_origin] || '*'
+      destination = params[:search_destination] || '*'
+      date = params[:search_date] || '*'
+      @ride_offers = RideOffer.where("origin LIKE ? AND destination LIKE ? AND date = ?", origin, destination, date)
+      render :json => {
+        ride_offers: @ride_offers
+      }
+      
+    else
+      @ride_offers = RideOffer.page(params[:page]).per(10)
+      render :json => {
+        ride_offers: @ride_offers,
+        page_number: params[:page],
+        total_pages: @ride_offers.total_pages
+      }
+    end
   end
 
   def show

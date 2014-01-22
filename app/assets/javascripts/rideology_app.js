@@ -17,7 +17,4 @@ window.RideologyApp = {
   }
 };
 
-$(document).ready(function(){
-  RideologyApp.initialize();
-  $('#draggable').draggable({revert: true});
-});
+
