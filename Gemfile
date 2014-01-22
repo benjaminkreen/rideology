@@ -21,6 +21,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'launchy'
+  gem 'letter_opener'
+end
+
 gem 'figaro'
 
 gem 'jquery-rails'

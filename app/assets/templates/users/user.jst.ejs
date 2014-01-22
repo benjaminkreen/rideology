@@ -1,6 +1,3 @@
-<div class="jumbotron">
-  <h4>Welcome <%= user.get('fname') %> </h4>
-</div>
 <div class="row">
   <div class="col-xs-6">
     <h3>Your Ride Offers</h3>
@@ -39,7 +36,7 @@
           <% if(ride.get('passengers').length > 0){ %>
             <ul class="list-group">
               <% ride.get('passengers').each(function(pass){%>
-                <li class="list-group-item"><%= pass.get('fname') %></li>
+                <li class="list-group-item"><%= pass.get('fname') %> <a href="mailto:<%= pass.get('email') %>?Subject=Rideology%20ride">Send Email</a></li>
               <% }); %>
             <% } else { %>
              <li class="list-group-item">No passengers yet.</li>
@@ -66,7 +63,7 @@
           <p>Origin: <%= take.get('origin') %></p>
           <p>Destination: <%= take.get('destination') %></p>
           <p>Cost: <%= take.get('cost') %></p>
-          <p>Drive Name: <%= take.get('fname') %> <%= take.get('lname') %></p>
+          <p>Drive Name: <%= take.get('fname') %> <%= take.get('lname') %> <a href="mailto:<%= take.get('email') %>?Subject=Rideology%20ride">Send Email</a></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

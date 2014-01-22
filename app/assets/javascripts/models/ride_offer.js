@@ -1,4 +1,5 @@
 RideologyApp.Models.RideOffer = Backbone.Model.extend({
+  urlRoot: ""
   parse: function(data){
     if (data.passengers){
       var passengers = data.passengers;

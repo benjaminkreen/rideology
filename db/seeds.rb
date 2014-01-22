@@ -18,6 +18,7 @@ ActiveRecord::Base.transaction do
       :username => Faker::Internet.user_name,
       :fname => Faker::Name.first_name,
       :lname => Faker::Name.last_name,
+      :email => Faker::Internet.email,
       :password => "password"
     })
   end

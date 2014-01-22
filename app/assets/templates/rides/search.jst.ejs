@@ -1,0 +1,30 @@
+<h1>Search</h1>
+<form>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <label for="origin">Origin: </label>
+      <input type="text" name="search_origin" id="origin">
+      <label for="destination">Destination: </label>
+      <input type="text" name="search_destination" id="destination">
+      <label for="date">Date: </label>
+      <input type="text" name="search_date" class="datepicker" readonly="true" id="date">
+      <button class="btn btn-primary submit">Search</button>
+    </div>
+  </div>
+</form>
+
+<% coll.each(function(ride){ %>
+	<div class="panel panel-default col-xs-8 col-xs-offset-2 droppable" id="<%= ride.id %>" data-id="<%= ride.id %>">
+		<div class="panel-heading">
+			<h3 class="panel-title">Origin: <%= ride.escape('origin') %> Destination: <%= ride.escape('destination') %></h3>
+    </div>
+    <div class="panel-body">
+        <p>Spots: <%= ride.get('spots') %></p>
+        <br>
+        <p>Cost: <%= ride.get('cost') %></p>
+        <br>
+        <p>Departure: <%= ride.get('date') %></p>
+    </div>
+  </div>
+  <br>
+<% }); %>

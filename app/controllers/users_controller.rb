@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       log_in!(@user)
+      AuthMailer.signup_email(@user).deliver!
       redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages

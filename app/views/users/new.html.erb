@@ -2,23 +2,28 @@
 	
 	<h1>Create a User</h1>
 	<form action="<%= users_url %>" method="POST">
-		<div class="col-xs-2">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-			<input type="text" name="user[username]" placeholder="username">
-			<br>
-			<br>
-			<input type="password" name="user[password]" placeholder="password">
-			<br>
-			<br>
-			<input type="submit" class="btn btn-primary" value="Create User">
-		</div>
-		<div class="col-xs-2">
-			<input type="text" name="user[fname]" placeholder="First Name">
-			<br>
-			<br>
-			<input type="text" name="user[lname]" placeholder="Last Name">
-			<br>
-			<br>
-		</div>
+    <div class="row">
+  		<div class="col-xs-2">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  			<input type="text" name="user[username]" placeholder="username">
+  			<br>
+  			<br>
+  			<input type="password" name="user[password]" placeholder="password">
+  		</div>
+  		<div class="col-xs-2">
+  			<input type="text" name="user[fname]" placeholder="First Name">
+  			<br>
+  			<br>
+  			<input type="text" name="user[lname]" placeholder="Last Name">
+  			<br>
+        <br>
+        <input type="text" name="user[email]" placeholder="Email">
+  		</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        <input type="submit" class="btn btn-primary" value="Create User">
+      </div>
+    </div>
 	</form>
 </div>

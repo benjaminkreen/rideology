@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :fname, :lname, :username, :password
+  attr_accessible :fname, :lname, :username, :password, :email
   validates :fname, :lname, :username, :presence => true
   validates :username, :uniqueness => true
   validates :password, :length => {:minimum => 6}, :on => :create

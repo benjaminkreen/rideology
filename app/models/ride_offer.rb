@@ -3,7 +3,7 @@ class RideOffer < ActiveRecord::Base
   
   belongs_to :user
   
-  has_many :ride_takes
+  has_many :ride_takes, dependent: :destroy
   
   has_many(
     :passengers,
