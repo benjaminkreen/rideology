@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 if Rails.env.production?
-  ActionMailer::Base.stmp_settings = {
+  ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
