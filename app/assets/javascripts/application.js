@@ -19,6 +19,7 @@
 //= require jquery.ui.datepicker
 //= require jquery.ui.draggable
 //= require jquery.ui.droppable
+//= require jquery.ui.sortable
 //= require rideology_app
 //= require_tree ../templates
 //= require_tree ./models

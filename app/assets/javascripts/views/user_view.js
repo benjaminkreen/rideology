@@ -14,6 +14,8 @@ RideologyApp.Views.UserView = Backbone.View.extend({
   render: function(){
     var content = JST['users/user']({ user: this.model, rides: this.rides, takes: this.takes });
     this.$el.html(content);
+    $('.n-link').removeClass('active');
+    $('#user-link').addClass('active');
     return this;
   },
   

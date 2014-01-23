@@ -35,6 +35,8 @@ RideologyApp.Views.IndexView = Backbone.View.extend({
       $('.pop').popover('hide');
       $('#draggable').toggleClass('pop');
     }, 5000);
+    $('.n-link').removeClass('active');
+    $('#index-link').addClass('active');
 		return this;
 	},
   

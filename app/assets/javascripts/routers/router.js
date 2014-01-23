@@ -4,7 +4,8 @@ RideologyApp.Routers.Router = Backbone.Router.extend({
 	},
 	
 	routes: {
-		"":"index",
+    "":"index",
+		"index":"index",
 		"user": "user",
 		"post": "postRideOffer",
     "search": "search"

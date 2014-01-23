@@ -5,6 +5,8 @@ RideologyApp.Views.PostRideOfferView = Backbone.View.extend({
       minDate: new Date(),
       dateFormat: "yy-mm-dd"
     });
+    $('.n-link').removeClass('active');
+    $('#post-link').addClass('active');
     return this;
   },
   
