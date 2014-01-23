@@ -45,12 +45,20 @@
                 <form action="<%= session_url %>" method="post">
                   <input type="hidden" name="_method" value="delete">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-                  <input type="submit" class="btn btn-danger btn-lg" value="Sign Out">
+                  <input type="submit" class="btn btn-default navbar-btn" value="Sign Out">
                 </form>
             </li>
           </ul>
         </li>
       <% else %>
+        <li>
+          <form action="<%= session_url %>" method="POST">
+            <input type="hidden" name="user[username]" value="guest">
+            <input type="hidden" name="user[password]" value="password">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" class="btn btn-default navbar-btn" value="Login as Guest">
+          </form>
+        </li>
         <li><a href="/session/new">Sign in</a></li>
         <li><a href="/users/new">Create Accout</a></li>
       <% end %>

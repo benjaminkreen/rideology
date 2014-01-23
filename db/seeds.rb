@@ -8,7 +8,7 @@
 
 ActiveRecord::Base.transaction do
   User.create!({
-    :username => "test",
+    :username => "guest",
     :fname => "John",
     :lname => "Doe",
     :password => "password"

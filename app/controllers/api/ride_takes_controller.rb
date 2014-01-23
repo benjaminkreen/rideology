@@ -10,5 +10,8 @@ class Api::RideTakesController < ApplicationController
   end
 
   def destroy
+    @ride_take = RideTake.find_by_user_id_and_ride_offer_id(current_user.id, params[:ride_offer_id])
+    @ride_take.destroy
+    head :ok
   end
 end

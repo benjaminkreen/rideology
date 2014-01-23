@@ -26,8 +26,11 @@ RideologyApp.Views.SearchRideOfferView = Backbone.View.extend({
               RideologyApp.currentUser.fetch();
               alert("Ride added");
               $(event.target).droppable("option", "disable", true);
+            },
+            error: function(){
+              alert("Must be logged in to do that");
             }
-          })
+          });
         }
     });
     return this;
