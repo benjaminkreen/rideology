@@ -25,6 +25,8 @@ An App Academy final project. Not so loosely based on zimride. Implemented on Ra
 * Twitter Bootstrap
   * Modals
   * Fixed Navbar
+* Heroku
+  * Sendgrid
 
 ### TODO:
 
@@ -33,5 +35,6 @@ An App Academy final project. Not so loosely based on zimride. Implemented on Ra
 * Add logic to subtract passangers from total spots
 * Make search not case-sensitive
 * Refactor routes to be more RESTful
+* Trigger emails 
 
   
