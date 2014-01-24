@@ -7,6 +7,7 @@ RideologyApp.Views.PostRideOfferView = Backbone.View.extend({
     });
     $('.n-link').removeClass('active');
     $('#post-link').addClass('active');
+    $('#draggable').css('opacity', 0.4);
     return this;
   },
   

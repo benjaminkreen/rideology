@@ -21,6 +21,7 @@ An App Academy final project. Not so loosely based on zimride. Implemented on Ra
 * jQuery.ui
   * Datepicker
   * Sortable
+    * Added custom sortable cursor courtesy of http://blog.arlenabraham.com/?p=5
   * Drag and droppable
 * Twitter Bootstrap
   * Modals

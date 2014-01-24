@@ -17,6 +17,7 @@ RideologyApp.Views.UserView = Backbone.View.extend({
     this.$('.sortable').sortable();
     $('.n-link').removeClass('active');
     $('#user-link').addClass('active');
+    $('#draggable').css('opacity', 0.4);
     return this;
   },
   

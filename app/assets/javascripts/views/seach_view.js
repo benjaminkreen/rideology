@@ -35,6 +35,7 @@ RideologyApp.Views.SearchRideOfferView = Backbone.View.extend({
     });
     $('.n-link').removeClass('active');
     $('#search-link').addClass('active');
+    $('#draggable').css('opacity', 1);
     return this;
   },
   
