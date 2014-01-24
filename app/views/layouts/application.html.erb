@@ -39,8 +39,8 @@
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.username %><b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Settings</a></li>
-              <li><a href="#">Help</a></li>
+              <li><a href="" data-toggle="modal" data-target="#about-modal">About</a></li>
+              <li><a href="" data-toggle="modal" data-target="#help-modal">Help</a></li>
               <li class="divider"></li>
               <li>
                 <form action="<%= session_url %>" method="post">
@@ -69,6 +69,45 @@
 
 <body style="padding-top: 150px">
 <%= yield %>
+
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">About</h4>
+      </div>
+      <div class="modal-body">
+        <p>Here's the repo for <a href="https://github.com/benjaminkreen/rideology">this</a> site.</p>
+        <p>Car icon is from <a href="http://glyphicons.com/">Glyphicons</a></p>
+        <p>Dainty draggable cursor by <a href="http://blog.arlenabraham.com/">Arlen</a></p> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Help</h4>
+      </div>
+      <div class="modal-body">
+        <p>Drag the car icon into a ride on the index page or the search page to sign up for a ride</p>
+        <p>Go to My Rides to view your offered rides and rides taken, including their passengers and drivers.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 
 </body>
 </html>
